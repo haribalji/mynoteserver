@@ -19,6 +19,8 @@ var cors = require('cors')
 
 const allowedOrigins = [
   "https://mynoteserver.onrender.com",
+  
+  "https://mynotefrontendserver.vercel.app",
   "https://mynotefrontendserver-sd23.vercel.app",
   "https://mynoteserver-hari-balajis-projects-ab66f8c3.vercel.app"
   ,"http://localhost:3000"
