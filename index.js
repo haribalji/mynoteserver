@@ -19,7 +19,8 @@ var cors = require('cors')
 
 const allowedOrigins = [
   "https://mynoteserver.onrender.com",
-  "http://localhost:3000"
+  "https://mynoteserver-hari-balajis-projects-ab66f8c3.vercel.app"
+  ,"http://localhost:3000"
 ];
 
 app.use(cors({
