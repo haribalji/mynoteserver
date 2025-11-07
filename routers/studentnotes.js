@@ -355,7 +355,7 @@
 
 const express = require("express");
 const router = express.Router();
-const StudentNote = require("../models/StudentNote");
+const StudentNote = require("../models/Studentnote");
 const fetchuser = require("../middleware/fetchuser");
 // const fetchuser = require('../middleware/fetchdata');
 
