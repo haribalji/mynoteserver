@@ -2,7 +2,7 @@ const express = require('express');
 // const fetchuser = require('../middleware/fetchdata');
 const Student = require("../models/Student"); // Importing the Student model
 const { body, validationResult } = require('express-validator');
-const { Navigate } = require('react-router-dom');
+// const { Navigate } = require('react-router-dom');
 const fetchuser = require('../middleware/fetchdata');
 
 const router = express.Router();

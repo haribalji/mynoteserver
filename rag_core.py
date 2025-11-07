@@ -59,9 +59,11 @@ def get_llm_response(prompt: str) -> str:
     try:
         client = OpenAI(
             base_url="https://router.huggingface.co/v1",
-            # api_key="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"
-            
-           api_key= "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"
+       
+           api_key = os.getenv("HF_API_KEY")
+
+        
+        
         )
         completion = client.chat.completions.create(
             model="meta-llama/Llama-3.1-8B-Instruct:novita",
