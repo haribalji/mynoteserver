@@ -80,7 +80,7 @@ router.post('/', upload.single('document'), (req, res) => {
   const filePath = req.file.path; // File storage path
 console.log(filePath)
   // Spawn the Python process to run summarizer.py with the uploaded file path as argument 
-  const pyProc = spawn('python', ['summarizer.py', filePath]);
+  const pyProc = spawn('python3', ['summarizer.py', filePath]);
   
   let output = '';
   pyProc.stdout.on('data', (data) => {
