@@ -47,7 +47,7 @@ useEffect(() => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/summarizes", {
+      const response = await fetch("https://mynoteserver.onrender.com/api/summarizes", {
         method: "POST",
         body: formData,
       });

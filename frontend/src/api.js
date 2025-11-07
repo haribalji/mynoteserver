@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://mynoteserver.onrender.com";
 
 export const uploadPDF = async (file) => {
   const formData = new FormData();

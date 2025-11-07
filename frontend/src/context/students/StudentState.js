@@ -4,7 +4,7 @@ import React, { useState,useEffect } from "react";
 import StudentContext from "./studentcontext";  // Correct
 import { Navigate } from "react-router-dom";
 const StudentState = (props) => {
-  const host = "http://localhost:5000";
+  const host = "https://mynoteserver.onrender.com";
   const initialStudents = [];
 
   const [students, setStudents] = useState(initialStudents);

@@ -100,7 +100,7 @@ app = FastAPI(title="RAG API", description="Ask questions from uploaded PDFs", v
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["https://mynoteserver.onrender.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

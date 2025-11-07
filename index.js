@@ -17,31 +17,23 @@ const upload = multer({ storage });
 
 var cors = require('cors')
 
-app.use(cors())
+const allowedOrigins = [
+  "https://mynoteserver.onrender.com",
+  "http://localhost:3000"
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+}));
 
 app.use(express.json());//to acess the body og the request
-
-// now  setup the  sever by creating the route to listen to the port
-
-// const allowedOrigins = [
-//   "http://localhost:5000", 
-//   "http://localhost:3000", 
-
-//   "https://mynotebook-2xx9.onrender.com"
-// ];
-
-// app.use(
-//   cors({
-//     origin: function (origin, callback) {
-//       if (!origin || allowedOrigins.includes(origin)) {
-//         callback(null, true);
-//       } else {
-//         callback(new Error("Not allowed by CORS"));
-//       }
-//     },
-//     credentials: true, // Allow cookies if needed
-//   })
-// );
 
 
 
