@@ -67,7 +67,7 @@ const ChapterComponent = () => {
 
   const fetchChapters = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/chapters/${classNumber}/${subject}`);
+      const response = await fetch(`https://mynoteserver.onrender.com/api/chapters/${classNumber}/${subject}`);
       if (!response.ok) {
         throw new Error("Chapters not found");
       }

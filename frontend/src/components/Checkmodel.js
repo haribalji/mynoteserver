@@ -20,7 +20,7 @@ const ChecklistModal = ({
     if (show) {
       axios
         .get(
-          `http://localhost:5000/api/checklists/${userId}/${classNumber}/${subject}/${chapter}`
+          `https://mynoteserver.onrender.com/api/checklists/${userId}/${classNumber}/${subject}/${chapter}`
         )
         .then((res) => setChecklist(res.data?.items || []))
         .catch((err) => console.error("Error fetching checklist:", err));
@@ -52,7 +52,7 @@ const ChecklistModal = ({
   const updateChecklist = (items) => {
     axios
       .put(
-        `http://localhost:5000/api/checklists/${userId}/${classNumber}/${subject}/${chapter}`,
+        `https://mynoteserver.onrender.com/api/checklists/${userId}/${classNumber}/${subject}/${chapter}`,
         { items }
       )
       .then(() => setChecklist(items))

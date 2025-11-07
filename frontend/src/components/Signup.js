@@ -15,7 +15,7 @@ const Signup = (props) => {
   const handlesubmit = async (e) => {
     e.preventDefault();
     // send create user request
-    const response = await fetch(`http://localhost:5000/api/auth/createuser`, {
+    const response = await fetch(`https://mynoteserver.onrender.com/api/auth/createuser`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

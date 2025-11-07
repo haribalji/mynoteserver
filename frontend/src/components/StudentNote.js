@@ -111,7 +111,7 @@ const StudentNoteComponent = () => {
   const fetchNotes = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/studentnotes/${classNumber}/${subject}/${chapter}`,
+        `https://mynoteserver.onrender.com/api/studentnotes/${classNumber}/${subject}/${chapter}`,
         {
           method: "GET",
           headers: { "auth-token": token, "Content-Type": "application/json" },
@@ -130,7 +130,7 @@ const StudentNoteComponent = () => {
   const fetchMedia = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/studentmedias/${classNumber}/${subject}/${chapter}`,
+        `https://mynoteserver.onrender.com/api/studentmedias/${classNumber}/${subject}/${chapter}`,
         {
           method: "GET",
           headers: { "auth-token": token },
@@ -147,7 +147,7 @@ const StudentNoteComponent = () => {
   // Fetch important topics
   const fetchImportantTopics = async () => {
     try {
-      const url = `http://localhost:5000/api/topics/${classNumber}/${subject}/${chapter}`;
+      const url = `https://mynoteserver.onrender.com/api/topics/${classNumber}/${subject}/${chapter}`;
       const response = await fetch(url);
       if (!response.ok) throw new Error("Topics not found");
       const data = await response.json();
@@ -163,7 +163,7 @@ const StudentNoteComponent = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost:5000/api/studentnotes/add",
+        "https://mynoteserver.onrender.com/api/studentnotes/add",
         {
           method: "POST",
           headers: { "Content-Type": "application/json", "auth-token": token },
@@ -182,7 +182,7 @@ const StudentNoteComponent = () => {
   const handleNoteDelete = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/studentnotes/delete/${id}`,
+        `https://mynoteserver.onrender.com/api/studentnotes/delete/${id}`,
         {
           method: "DELETE",
           headers: { "auth-token": token },
@@ -198,7 +198,7 @@ const StudentNoteComponent = () => {
   const handleNoteEdit = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/studentnotes/update/${editNote.id}`,
+        `https://mynoteserver.onrender.com/api/studentnotes/update/${editNote.id}`,
         {
           method: "PUT",
           headers: { "auth-token": token, "Content-Type": "application/json" },
@@ -231,13 +231,13 @@ const StudentNoteComponent = () => {
     formData.append("fileType", fileType);
     try {
       const response = await fetch(
-        "http://localhost:5000/api/studentmedias/upload",
+        "https://mynoteserver.onrender.com/api/studentmedias/upload",
         {
           method: "POST",
           headers: { "auth-token": token },
           body: formData,
-        }
-      );
+        });
+    
       if (!response.ok) throw new Error("Failed to upload file");
       await response.json();
       fetchMedia();
@@ -248,7 +248,7 @@ const StudentNoteComponent = () => {
 
   const handleDownloadFile = async (filePath, chapterName) => {
     try {
-      const response = await fetch(`http://localhost:5000${filePath}`);
+      const response = await fetch(`https://mynoteserver.onrender.com${filePath}`);
       if (!response.ok) throw new Error("Failed to fetch file");
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
@@ -267,7 +267,7 @@ const StudentNoteComponent = () => {
   const handleDeleteMedia = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/studentmedias/delete/${id}`,
+        `https://mynoteserver.onrender.com/api/studentmedias/delete/${id}`,
         {
           method: "DELETE",
           headers: { "auth-token": token },
@@ -289,7 +289,7 @@ const StudentNoteComponent = () => {
     formData.append("fileType", fileType);
     try {
       const response = await fetch(
-        "http://localhost:5000/api/studentmedias/upload",
+        "https://mynoteserver.onrender.com/api/studentmedias/upload",
         {
           method: "POST",
           headers: { "auth-token": token },
@@ -413,7 +413,7 @@ const StudentNoteComponent = () => {
     formData.append("fileType", "audio");
     try {
       const response = await fetch(
-        "http://localhost:5000/api/studentmedias/upload",
+        "https://mynoteserver.onrender.com/api/studentmedias/upload",
         {
           method: "POST",
           headers: { "auth-token": token },
@@ -658,14 +658,14 @@ const StudentNoteComponent = () => {
                   </h6>
                   {item.fileType === "image" ? (
                     <img
-                      src={`http://localhost:5000${item.filePath}`}
+                      src={`https://mynoteserver.onrender.com${item.filePath}`}
                       alt={item.fileName}
                       className="img-fluid rounded shadow-sm mt-2 media-thumb"
                     />
                   ) : item.fileType === "audio" ? (
                     <audio controls className="mt-2 media-audio">
                       <source
-                        src={`http://localhost:5000${item.filePath}`}
+                        src={`https://mynoteserver.onrender.com${item.filePath}`}
                         type="audio/mpeg"
                       />
                       Your browser does not support the audio tag.

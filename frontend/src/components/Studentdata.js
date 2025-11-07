@@ -4,7 +4,7 @@ import studentContext from "../context/students/studentcontext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Studentdata.css";
 import { useNavigate } from "react-router-dom";
-const host = "http://localhost:5000"; // or your API base URL
+const host = "https://mynoteserver.onrender.com"; // or your API base URL
 
 const Studentdata = (props) => {
   const navigate = useNavigate();

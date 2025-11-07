@@ -94,7 +94,7 @@ const SubjectsByClass = () => {
   // Fetch subjects from backend
   const fetchSubjects = async (classNumber) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/subjects/${classNumber}`);
+      const response = await fetch(`https://mynoteserver.onrender.com/api/subjects/${classNumber}`);
       if (!response.ok) {
         throw new Error("Subjects not found");
       }
